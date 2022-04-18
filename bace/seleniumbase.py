@@ -44,3 +44,13 @@ class SeleniumBase:
     def get_element_by_text(self, elements: List[WebElement], name: str ) -> WebElement:
         name = name.lower()
         return [element for element in elements if element.text.lower() == name][0]
+
+    def wait_for_url_contains(self, changes: str) -> None:
+        self.__wait.until(ec.url_contains(changes))
+
+    def wait_for_url_change_to(self, string: str) -> None:
+        """uses selenium's url_contains method to verify the url contains certain text in it"""
+        self.__wait.until(ec.url_to_be(string))
+
+    def get_current_url(self) -> str:
+        return self.driver.current_url
