@@ -19,6 +19,6 @@ class TestPlans:
             id_plans.append(CBD_id)
             browser.back()
             with check:
-                assert len(CBD_id)>5, f"тендер не открылся {CBD_id}"
+                assert len(CBD_id) >= 58, f"тендер не открылся {CBD_id}"
         for i in id_plans:
             print(i)
