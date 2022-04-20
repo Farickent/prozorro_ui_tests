@@ -17,6 +17,8 @@ class TestFiltersHomepage:
             name_filters = homepage_nav.get_nav_filters_text()
             filters = homepage_nav.get_nav_filters()[indx].click()
         assert actual_name_filters_homepage == name_filters, f"Filters name is not correct{name_filters}"
+        for i in name_filters:
+            print(i)
 
 
 

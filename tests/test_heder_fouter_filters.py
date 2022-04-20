@@ -15,6 +15,7 @@ class TestHederFouterFilters:
         for indx in range(23):
             name_filters_hed_fout = homepage_nav.get_heder_fouter_links_text()
             links_hed_fut = homepage_nav.get_heder_fouter_links()[indx].click()
-            time.sleep(1)
             browser.back()
         assert actual_name_heder_fouter_filters == name_filters_hed_fout, f"Названия изменились на вот такие {name_filters_hed_fout}, нужно смотреть!"
+        for i in name_filters_hed_fout:
+            print(i)

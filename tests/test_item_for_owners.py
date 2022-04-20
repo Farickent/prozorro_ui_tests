@@ -13,6 +13,7 @@ class TestItemOwner:
         browser.get(link)
         actual_item_name = ['Будівництво', 'Медицина', 'Меблі', "Комп'ютерна техніка", 'Канцелярія та госптовари', 'Транспорт та запчастини', 'Енергетика, нафтопродукти та паливо', 'Метали', 'Комунальне та побутове обслуговування', 'Навчання та консалтинг', 'Нерухомість', 'Сільське господарство', 'Одяг, взуття та текстиль', 'Промислове обладнання та прилади', 'Харчування', 'Поліграфія', 'Науково-дослідні роботи', 'Різні послуги та товари']
         for indx in range(18):
+            browser.execute_script("window.scrollTo(0, 1080)")
             actual_item_name_text = homepage_nav.get_category_owners_text()
             item_owner = homepage_nav.get_category_owners()[indx].click()
             item_owner_onclick = homepage_nav.get_category_owners()[indx].click()

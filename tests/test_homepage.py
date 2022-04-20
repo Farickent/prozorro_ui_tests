@@ -18,6 +18,8 @@ class TestHomepage:
             homepage_nav.wait_for_url_contains(links[indx])
             with check:
                 assert links[indx] in homepage_nav.driver.current_url, f"Link is not present in url {links[indx]}"
+        for i in actual_links:
+            print(i)
 
 
 

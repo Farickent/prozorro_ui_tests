@@ -2,8 +2,6 @@ from bace.seleniumbase import SeleniumBase
 from selenium.webdriver.remote.webelement import WebElement
 from typing import List
 from bace.utlis import Utils
-
-
 class Items_in_page(SeleniumBase):
 
     __search_result_tenders = "ul.search-result__list>li"

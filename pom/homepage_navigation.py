@@ -10,6 +10,21 @@ class HomePageNavg(SeleniumBase):
     __ui_filters: str = "label.filter-btn"
     __heder_foyter_links: str = "span[class*=link__wrapper]"
     __category_owners: str = "li[class*=category-purchases__list]"
+    __filters_tender: str = "div.select__element"
+    __click_filter_tenders: str = "span[class*=select__text]"
+
+
+    def get_click_filter_name(self):
+        return self.is_visible("css", self.__click_filter_tenders)
+
+    def get_filters_tender(self) -> List[WebElement]:
+        return  self.are_visible("css", self.__filters_tender, "serch filter for tenders")
+
+    def get_filters_tender_text(self):
+        category_filter_tender = self.get_filters_tender()
+        category_filter_tender_text = self.get_text_from_webelements(category_filter_tender)
+        return category_filter_tender_text
+
 
     def get_category_owners(self) -> List[WebElement]:
         return self.are_visible("css", self.__category_owners, "Visible 18 item for owner")
